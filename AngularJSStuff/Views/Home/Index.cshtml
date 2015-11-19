@@ -13,12 +13,12 @@
         </div>
     </div>
 
-    <div style="color:red;font-size:large;" class="row">
+    <div ng-show="error" style="color:red;font-size:large;" class="row">
         {{error}}
     </div>
 
     <div class="row">
-        {{user}}
+       
         <form>
             <input type="search" ng-model="username" placeholder="Find on Github..." />
             <input type="submit" ng-click="Search(username)" value="Search" />
@@ -27,7 +27,7 @@
         <div>
             Name: {{username}}
         </div>
-        <img ng-src="{{user.avatar_url}}" />
+        <img ng-show="user" ng-src="{{user.avatar_url}}" />
     </div>
 
 
