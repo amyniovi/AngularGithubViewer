@@ -1,16 +1,35 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div ng-controller="MainController">
 
-<div  ng-controller="MainController" class="row">
-    <div class="col-md-4">
-        {{message}}
+    <div class="row">
+        <div class="col-md-4">
+            {{message}}
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
     </div>
-    <div class="col-md-4">
+
+    <div style="color:red;font-size:large;" class="row">
+        {{error}}
     </div>
-    <div class="col-md-4">
+
+    <div class="row">
+        {{user}}
+        <form>
+            <input type="search" ng-model="username" placeholder="Find on Github..." />
+            <input type="submit" ng-click="Search(username)" value="Search" />
+
+        </form>
+        <div>
+            Name: {{username}}
+        </div>
+        <img ng-src="{{user.avatar_url}}" />
     </div>
-   
+
 
 
 </div>
