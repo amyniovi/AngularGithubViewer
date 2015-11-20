@@ -5,9 +5,6 @@
 
     <div class="row">
         <div class="col-md-4">
-            {{message}}
-        </div>
-        <div class="col-md-4">
         </div>
         <div class="col-md-4">
         </div>
@@ -18,7 +15,7 @@
     </div>
 
     <div class="row">
-       
+
         <form>
             <input type="search" ng-model="username" placeholder="Find on Github..." />
             <input type="submit" ng-click="Search(username)" value="Search" />
@@ -30,6 +27,33 @@
         <img ng-show="user" ng-src="{{user.avatar_url}}" />
     </div>
 
+    <div ng-show="reposError" style="color:red;font-size:large;" class="row">
+        {{reposError}}
+    </div>
+
+    <div ng-show=" user" class="row">
+        Repositories for : {{username}}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Language</th>
+                    <th>Stars</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="repo in repos">
+                    <td>{{repo.name}}</td>
+                    <td>{{repo.language}}</td>
+                    <td>{{repo.stargazers_count}}</td>
+                </tr>
+
+            </tbody>
+            
+
+        </table>
+    </div>
 
 
 </div>
